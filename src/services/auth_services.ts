@@ -1,9 +1,6 @@
-import { createClient } from '@supabase/supabase-js'
 import { toast } from 'react-hot-toast'
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_URL!
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-const supabase = createClient(supabaseUrl, supabaseKey)
-
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+const supabase = createClientComponentClient()
 export default async function login({email,password}:{email:string,password:string}) {
     try {
         const { data, error } = await supabase.auth.signInWithPassword({
