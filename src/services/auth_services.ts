@@ -7,7 +7,6 @@ export default async function login({email,password}:{email:string,password:stri
             email:email,
             password:password
         })
-        console.log(data)
         toast.success("Logged in sucessful")
         if (error) throw error
     } catch (error) {

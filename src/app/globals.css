@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap')
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -26,6 +28,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.backdrop{
+.hologram-backdrop{
   background: conic-gradient(from 270deg at 50.00% 50.00%, rgba(0, 0, 0, 0.00) 2.3409034498035908deg, rgba(84, 192, 160, 0.10) 2.5281363911926746deg, rgba(0, 0, 0, 0.00) 181.31576299667358deg, rgba(84, 192, 160, 0.00) 256.43158435821533deg, #54C0A0 359.23537731170654deg);
 }
