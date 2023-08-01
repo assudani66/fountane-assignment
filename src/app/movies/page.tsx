@@ -17,8 +17,17 @@ const page = () => {
         return <span>error in fetching data</span>
       }
       if(data){
-        console.log(data)
-          return data.map((movieData:any)=><MovieCard movieData={movieData} key={movieData.id}/>)
+          return (
+            <div className='flex w-full place-items-center justify-center items-center'>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5 w-6/12 place-items-center	'>
+                    {data.map((movieData:any)=>
+                        <div className='col-span-1 '>
+                            <MovieCard movieData={movieData} key={movieData.id}/>
+                        </div>
+                    )}
+                </div>
+            </div>
+          )
       }
 }
 
