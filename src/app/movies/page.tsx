@@ -13,9 +13,11 @@ const page = () => {
       if(isLoading) {
         return <span>loading</span>
       }
+
       if(isError){
         return <span>error in fetching data</span>
       }
+      
       if(data){
           return (
             <div className='flex w-full place-items-center justify-center items-center'>
