@@ -11,6 +11,7 @@ export default async function login({email,password}:{email:string,password:stri
             password:password
         })
         console.log(data)
+        toast.success("Logged in sucessful")
         if (error) throw error
     } catch (error) {
         toast.error("Invalid password or email")
@@ -21,6 +22,7 @@ export default async function login({email,password}:{email:string,password:stri
 export async function logout() {
     try {
         const { error } = await supabase.auth.signOut()
+        toast.success("logged out")
         if (error) throw error
     } catch (error) {
         toast.error("error trying to logout")
