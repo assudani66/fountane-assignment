@@ -1,13 +1,18 @@
 import { toast } from 'react-hot-toast'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { useRouter } from 'next/navigation'
+
 const supabase = createClientComponentClient()
-export default async function login({email,password}:{email:string,password:string}) {
+export default async function login({email,password,router}:{email:string;password:string;router:any}) {
     try {
         const { data, error } = await supabase.auth.signInWithPassword({
             email:email,
             password:password
         })
-        toast.success("Logged in sucessful")
+        if(data.session!==null){
+            toast.success("Logged in sucessful")
+            router.push("/movies")
+        }
         if (error) throw error
     } catch (error) {
         toast.error("Invalid password or email")
@@ -15,10 +20,11 @@ export default async function login({email,password}:{email:string,password:stri
     }
 }
 
-export async function logout() {
+export async function logout(router:any) {
     try {
         const { error } = await supabase.auth.signOut()
         toast.success("logged out")
+        router.push("/")
         if (error) throw error
     } catch (error) {
         toast.error("error trying to logout")

@@ -1,8 +1,10 @@
 "use client"
 import login, { logout } from '@/services/auth_services'
+import { useRouter } from 'next/navigation'
 import React, { SyntheticEvent, useState } from 'react'
 
 const LoginScreen = () => {
+  const router = useRouter()
   const [userLogin,setUserLogin] = useState({
     email:"",
     password:""
@@ -10,12 +12,12 @@ const LoginScreen = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    login({email:userLogin.email,password:userLogin.password})
+    login({email:userLogin.email,password:userLogin.password,router:router})
   }
 
   const guestLogot = (e:SyntheticEvent) => {
     e.preventDefault()
-    logout()
+    logout(router)
   }
 
   const setGuestLoginInfo = (e: SyntheticEvent)  => {
