@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <div className='flex flex-col'>
     <div className='flex flex-col w-full justify-center items-center space-y-4 z-10'>
-        <p className='text-xs text-[]'>JET PROTOCOL</p>
+        <p className='text-xs text-[#54C0A0]'>JET PROTOCOL</p>
         <p className='text-5xl'>the next generation of</p>
         <p className='text-5xl font-playfair italic' >defi governance</p>
         <p className='text-xl text-gray-400'>experience open source, transparent and efficient borrowing and lending on solana.</p>
