@@ -22,6 +22,10 @@ const page = () => {
       if(data){
           return (
             <div>
+              <NextSeo
+                title='Jet Protocol movies'
+                description="Decentralized lending and borrowing built on the Solana blockchain."
+              />
               <div className='sticky top-0 z-20 -p-20'>
                 <NavBar currentScreen='MOVIESLIST'/>
               </div>
