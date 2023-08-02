@@ -4,8 +4,7 @@ import { useQuery } from 'react-query'
 import getMovieList from '../../services/movie_services'
 import MovieCard from '@/components/movieCard'
 import NavBar from '@/components/navBar'
-import Hologram from '@/components/hologram'
-
+import { NextSeo } from 'next-seo'
 const page = () => {
     const { isLoading, isError, data, error } = useQuery({
         queryKey: ['todos'],
